@@ -5,6 +5,7 @@ import store from "./store";
 import ElementUi from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "@/styles/index.css"
+import "@/icons"
 
 Vue.config.productionTip = false;
 Vue.use(ElementUi);

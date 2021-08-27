@@ -1,5 +1,6 @@
 <template>
   <div class="sideNav">
+    <logo v-if="showLogo" :collapse="isCollapse"></logo>
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
@@ -22,10 +23,18 @@
 <script>
 import SidenavItem from "./sidenavItem.vue";
 import variables from "@/styles/variables.scss";
+import Logo from "./logo.vue";
 export default {
   name: "SideNav",
   components: {
     SidenavItem,
+    Logo
+  },
+  data() {
+    return {
+      isCollapse: true,
+      showLogo:true
+    }
   },
   computed: {
     routes() {
@@ -53,5 +62,9 @@ export default {
   width: 200px;
   background-color: #304156;
   color: aliceblue;
+  height: calc(100% - 50px);
+}
+.el-scrollbar ,.scrollbar-wrapper{
+  height: 100%;
 }
 </style>
