@@ -6,7 +6,7 @@ import ElementUi from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "@/styles/index.css"
 import "@/icons"
-
+import "@/mock"
 Vue.config.productionTip = false;
 Vue.use(ElementUi);
 
