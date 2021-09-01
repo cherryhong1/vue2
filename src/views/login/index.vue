@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { login } from "@/api/user";
 export default {
   name: "LoginForm",
   data() {
@@ -40,8 +41,9 @@ export default {
     loginBtn(loginForm) {
        this.$refs[loginForm].validate((valid) => {
           if (valid) {
-            console.log(this.loginForm)
-            alert('submit!');
+            login(this.loginForm).then(res=>{
+              console.log(res)
+            })
           } else {
             console.log('error submit!!');
             return false;

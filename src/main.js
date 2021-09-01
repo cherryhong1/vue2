@@ -6,10 +6,10 @@ import ElementUi from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "@/styles/index.css"
 import "@/icons"
-import "@/mock"
+import { mockXHR } from '@/mock'
 Vue.config.productionTip = false;
 Vue.use(ElementUi);
-
+mockXHR()
 new Vue({
   router,
   store,

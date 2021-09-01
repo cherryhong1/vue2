@@ -29,7 +29,7 @@ export function mockXHR() {
         // https://expressjs.com/en/4x/api.html#req
         result = respond({
           method: type,
-          body: body,
+          body: JSON.parse(body),
           query: param2Obj(url)
         })
       } else {
@@ -43,8 +43,6 @@ export function mockXHR() {
     Mock.mock(new RegExp(i.url), i.type || 'get', XHR2ExpressReqWrap(i.response))
   }
 }
-
-// for mock server
 const responseFake = (url, type, respond) => {
   return {
     url: new RegExp(`/mock${url}`),
