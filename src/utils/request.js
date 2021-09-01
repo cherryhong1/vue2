@@ -5,12 +5,13 @@ import axios from "axios";
 // } from "@/utils/auth";
 
 const service = axios.create({
-  baseURL: "",
+  baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000,
 });
 
 service.interceptors.request.use(
   (config) => {
+    console.log(config)
     // config.headers['X-Token'] = getToken()
     return config;
   },
@@ -23,6 +24,7 @@ service.interceptors.request.use(
 // response interceptors
 service.interceptors.response.use(
   (response) => {
+    console.log(response)
     const res = response.data;
     if (res.code !== 200) {
       console.error("Error");
