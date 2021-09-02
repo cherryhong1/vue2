@@ -26,11 +26,9 @@ service.interceptors.response.use(
   (response) => {
     console.log(response)
     const res = response.data;
-    if (res.code !== 200) {
-      console.error("Error");
-    } else {
+
       return res.data;
-    }
+
   },
   (error) => {
     console.log("err", error);
